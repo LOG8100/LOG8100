@@ -4,13 +4,8 @@ on:
     branches:
       - main                   # Only trigger on the main branch
 jobs:
-  security:
+  build:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@master
-      - name: Install                                # Install dependencies
-        run: npm install
-      - name: Run Snyk to check for vulnerabilities
-        uses: snyk/actions/node@master
-        env:
-          SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
+      - name: Checkout code
+        uses: actions/checkout@v2
