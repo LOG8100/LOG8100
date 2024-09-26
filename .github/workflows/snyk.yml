@@ -1,0 +1,16 @@
+name: Example workflow for Node using Snyk
+on: 
+  push:                        # Trigger on push events
+    branches:
+      - main                   # Only trigger on the main branch
+jobs:
+  security:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@master
+      - name: Install                                # Install dependencies
+        run: npm install
+      - name: Run Snyk to check for vulnerabilities
+        uses: snyk/actions/node@master
+        env:
+          SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
