@@ -1,20 +1,38 @@
 {
-  "name": "log8100-tp1",
-  "version": "1.0.0",
-  "description": "[![SonarCloud](https://sonarcloud.io/images/project_badges/sonarcloud-white.svg)](https://sonarcloud.io/summary/new_code?id=HXL916_LOG8100-TP1)\r [![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=Christophersalem0_LOG8100&metric=alert_status)](https://sonarcloud.io/summary/new_code?id=HXL916_LOG8100-TP1)",
-  "main": "index.js",
+  "name": "dvna",
+  "version": "0.0.1",
+  "description": "Random App",
+  "main": "server.js",
+  "directories": {
+    "doc": "docs"
+  },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/HXL916/LOG8100-TP1.git"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/HXL916/LOG8100-TP1/issues"
-  },
-  "homepage": "https://github.com/HXL916/LOG8100-TP1#readme"
+  "author": "sns",
+  "license": "MIT",
+  "dependencies": {
+    "bcrypt": "^1.0.3",
+    "csurf": "^1.9.0",
+    "ejs": "^2.5.7",
+    "express": "^4.16.2",
+    "express-fileupload": "^0.4.0",
+    "express-flash": "0.0.2",
+    "express-session": "^1.15.6",
+    "flash": "^1.1.0",
+    "libxmljs": "^0.19.1",
+    "mathjs": "3.10.1",
+    "md5": "^2.2.1",
+    "morgan": "^1.9.0",
+    "mysql2": "^1.4.2",
+    "node-serialize": "0.0.4",
+    "passport": "^0.4.0",
+    "passport-local": "^1.0.0",
+    "sequelize": "^4.13.10",
+    "winston": "^3.0.0",
+    "x-xss-protection": "^1.1.0",
+    "pg": "^8.10.0",
+    "pg-hstore": "^2.3.4"
+  }
 }
