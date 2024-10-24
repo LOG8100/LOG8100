@@ -1,8 +1,8 @@
-// Check if DATABASE_URL is defined
-if (!process.env.DATABASE_URL) {
-    throw new Error('DATABASE_URL is not defined');
-  }
-  
-  module.exports = {
-    dialect: 'postgres'
-  }
+module.exports = {
+  username: process.env.MYSQL_USER,
+  password: process.env.MYSQL_PASSWORD,
+  database: process.env.MYSQL_DATABASE,
+  host: process.env.MYSQL_HOST || 'mysql-db',
+  port: process.env.MYSQL_PORT || 3306,
+  dialect: 'postgres'
+}
