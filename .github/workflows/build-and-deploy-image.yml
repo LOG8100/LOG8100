@@ -43,5 +43,7 @@ jobs:
         with:
           heroku_api_key: ${{ secrets.HEROKU_API_KEY }}  # Your Heroku API key
           heroku_app_name: log8100-tp2-06  # Your Heroku app name
-          heroku_email: ${{ secrets.HEROKU_EMAIL }}  # Your Heroku account email (moved to secrets)
+          heroku_email: ${{ secrets.HEROKU_EMAIL }}  # Your Heroku account email
           usedocker: true  # Specify that we are deploying a Docker container
+          heroku_stack: container  # Set the stack to container
+
