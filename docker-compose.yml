@@ -1,0 +1,40 @@
+
+version: "3.8"
+services:
+  dvna:
+    build:
+      context: ./
+      dockerfile: Dockerfile  # Building my own app image
+    image: naabda92/log8100_tp2:latest  # Set the image name and tag
+    ports:
+      - "9090:9090"  # Expose DVNA on port 9090
+    depends_on:
+      - db
+    networks:
+      - dvnaNetwork
+    environment:
+      - DATABASE_URL=${DATABASE_URL}
+      - POSTGRES_USER=${POSTGRES_USER}
+      - POSTGRES_PASSWORD=${POSTGRES_PASSWORD}
+      - POSTGRES_DB=${POSTGRES_DB}
+      - POSTGRES_HOST=${POSTGRES_HOST}
+      - POSTGRES_PORT=${POSTGRES_PORT}
+
+  db:
+    image: postgres:13
+    container_name: dvna_db
+    networks:
+      - dvnaNetwork
+    volumes:
+      - db_data:/var/lib/postgresql/data
+    environment:
+      - POSTGRES_USER=${POSTGRES_USER}
+      - POSTGRES_PASSWORD=${POSTGRES_PASSWORD}
+      - POSTGRES_DB=${POSTGRES_DB}
+
+networks:
+  dvnaNetwork:
+    driver: bridge
+
+volumes:
+  db_data:
