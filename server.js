@@ -37,7 +37,12 @@ app.use(require('express-flash')());
 app.use('/app',require('./routes/app')())
 app.use('/',require('./routes/main')(passport))
 
+// Delay the server start by 5 seconds (5000 milliseconds)
+const delay = 0;
+
 // Start Server
-app.listen(3000, () => {
-  console.log('Server is running on http://localhost:3000');
-});
+ setTimeout(() => {
+  const PORT = process.env.PORT || 9090; // Use the port from Heroku or fall back to 9090
+  app.listen(PORT, () => {
+    console.log('Server is running on http://localhost:9090 after a delay');
+  })});
